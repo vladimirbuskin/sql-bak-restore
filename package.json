@@ -1,7 +1,6 @@
 {
   "name": "sql-bak-restore",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +22,10 @@
   "bin": {
     "sql-bak-restore": "bin/index.js"
   },
-  "preferGlobal": "true"
+  "preferGlobal": "true",
+  "gitHead": "7a39a3446fb4b7216d8ea93f912f7148e3929ab5",
+  "readme": "ERROR: No README data found!",
+  "_id": "sql-bak-restore@1.0.1",
+  "_shasum": "ecd429571263cf038ba81f662832f991f08e5742",
+  "_from": "sql-bak-restore@*"
 }
