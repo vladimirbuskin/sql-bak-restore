@@ -12,9 +12,10 @@ function restore()
   var dbName  = noArgv[1] || "p";
   var dbOwner = noArgv[2] || "mstar";
 
-  var bakPath = path.isAbsolute(bakName) ? bakName : path.join(__dirname, bakName);
-
-  if (fs.exists(bakPath))
+  var bakPath = path.isAbsolute(bakName) ? bakName : path.join(process.cwd(), bakName);
+  console.log(bakPath);
+  console.log(fs.exists(bakPath));
+  if (fs.existsSync(bakPath))
   {
     var args = [
       '-v',
@@ -31,7 +32,7 @@ function restore()
   }
   else 
   {
-    console.log(bakPath + " is not found, please specify correct file\n"+
+    console.log("\"" + bakPath + "\" is not found, please specify correct file\n"+
       "parameters: [bakPath] [dbName] [owner]"
     );
   }
