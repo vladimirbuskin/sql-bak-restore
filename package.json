@@ -24,7 +24,7 @@
   },
   "preferGlobal": "true",
   "gitHead": "7a39a3446fb4b7216d8ea93f912f7148e3929ab5",
-  "readme": "ERROR: No README data found!",
+  "readme": "readme.md",
   "_id": "sql-bak-restore@1.0.1",
   "_shasum": "ecd429571263cf038ba81f662832f991f08e5742",
   "_from": "sql-bak-restore@*"
