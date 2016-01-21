@@ -23,7 +23,7 @@ function restore()
       'dbfld="'+path.dirname(bakPath)+'"',
       'dbname="'+dbName+'"',
       'dbowner="'+dbOwner+'"',
-      '-E -i restore.sql'
+      '-E -i "'+path.join(__dirname,'restore.sql') + '"'
     ]
 
     var command = 'sqlcmd ' + args.join(' ');
