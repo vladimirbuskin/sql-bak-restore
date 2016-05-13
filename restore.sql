@@ -9,6 +9,9 @@ GO
 DROP DATABASE [$(dbname)]
 GO
 
+-- to view files withing bakpath
+RESTORE FILELISTONLY FROM DISK='$(bakpath)'
+GO
 
 RESTORE DATABASE [$(dbname)]
 FILE = N'$(oldDbName)' 
