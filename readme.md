@@ -6,8 +6,8 @@ Example:
 
 ```
 sql-bak-restore <bakPath> <dbName> <oldDbName> <owner>
-
-```
+``` 
+!!! **sqlcmd** should respond, if it is not please install and make sure it's path withing PATH variable.
 
 Arguments:
 
