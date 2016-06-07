@@ -11,7 +11,7 @@ Usage:
 ```
 >sql-bak-restore <bakPath> <dbName> <oldDbName> <owner>
 ``` 
-!!! **sqlcmd** command line utility should respond, if it is not please that to your PATH variable.
+!!! **sqlcmd** command line utility should respond, if it's not please add that to your PATH variable.
 
 Arguments:
 
