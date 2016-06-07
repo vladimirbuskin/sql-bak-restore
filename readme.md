@@ -2,12 +2,16 @@
 
 Allows to restore sql server backup file (\*.bak)
 
-Example:
-
+Install:
 ```
-sql-bak-restore <bakPath> <dbName> <oldDbName> <owner>
+>npm install -g sql-bak-restore
 ``` 
-!!! **sqlcmd** should respond, if it is not please install and make sure it's path withing PATH variable.
+
+Usage:
+```
+>sql-bak-restore <bakPath> <dbName> <oldDbName> <owner>
+``` 
+!!! **sqlcmd** command line utility should respond, if it is not please that to your PATH variable.
 
 Arguments:
 
@@ -16,3 +20,8 @@ Arguments:
 - oldDbName, what is logical database name (what name was when you did a backup)
 - owner, userName to make and give him db_owner privileges (password "1")
 
+
+Example:
+```
+>sql-bak-restore northwind.bak northwind northwind user1
+``` 
