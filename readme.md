@@ -1,6 +1,7 @@
 # NodeJS Sql server restore backup utility
 
-Allows to restore sql server backup file (\*.bak)
+Allows to restore sql server backup file (\*.bak).
+Good when you offen have to restore different databaseses, so it steamlines this procedure.
 
 Install:
 ```
@@ -16,9 +17,10 @@ Usage:
 Arguments:
 
 - bakpath, relative or absolute path to file
-- dbName, to which database to restore
-- oldDbName, what is logical database name (what name was when you did a backup)
+- dbName, to which database to restore (!! database with this name will be deleted if exists !!)
+- oldDbName, database name (if you don't know, specify something and run, you will see available databases after run.)
 - owner, userName to make and give him db_owner privileges (password "1")
+
 
 
 Example:
