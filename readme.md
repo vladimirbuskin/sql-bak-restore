@@ -5,12 +5,12 @@ Good when you offen have to restore different databaseses, so it steamlines this
 
 Install:
 ```
->npm install -g sql-bak-restore
+npm install -g sql-bak-restore
 ``` 
 
 Usage:
 ```
->sql-bak-restore <bakPath> <dbName> <oldDbName> <owner>
+sql-bak-restore <bakPath> <dbName> <oldDbName> <owner>
 ``` 
 !!! **sqlcmd** command line utility should respond, if it's not please add that to your PATH variable.
 
@@ -25,5 +25,5 @@ Arguments:
 
 Example:
 ```
->sql-bak-restore northwind.bak northwind northwind user1
+sql-bak-restore northwind.bak northwind northwind user1
 ``` 
