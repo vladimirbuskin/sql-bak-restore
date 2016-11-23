@@ -19,7 +19,7 @@ FROM DISK='$(bakpath)'
 WITH 
     FILE = 1,  
     MOVE N'$(oldDbName)' TO N'$(dbfld)\$(dbname).mdf',
-    MOVE N'$(oldDbName)_log' TO N'$(dbfld)\$(dbname).ldf',
+    MOVE N'$(oldDbName_log)' TO N'$(dbfld)\$(dbname).ldf',
     NOUNLOAD,  
     STATS = 10
 GO

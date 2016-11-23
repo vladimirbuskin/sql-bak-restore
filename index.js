@@ -10,7 +10,7 @@ function restore()
 
   if (noArgv.length < 4)
   {
-    console.log("parameters: [bakPath] [dbName] [oldDbName] [owner]");
+    console.log("parameters: <bakPath> <dbName> <oldDbName> <owner> [oldDbName_log]");
     return
   }
 
@@ -18,6 +18,7 @@ function restore()
   var dbName  = noArgv[1];
   var oldDbName  = noArgv[2];
   var dbOwner = noArgv[3];
+  var oldDbName_log = noArgv[4] || oldDbName + '_log';
   var bakPath = path.isAbsolute(bakName) ? bakName : path.join(process.cwd(), bakName);
 
   
@@ -33,6 +34,7 @@ function restore()
       'dbfld="'+path.dirname(bakPath)+'"',
       'dbname="'+dbName+'"',
       'oldDbName="'+oldDbName+'"',
+      'oldDbName_log="'+oldDbName_log+'"',
       'dbowner="'+dbOwner+'"',
       '-E -i "'+path.join(__dirname,'restore.sql') + '"'
     ]
