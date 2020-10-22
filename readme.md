@@ -28,3 +28,5 @@ Example:
 ```
 sql-bak-restore northwind.bak northwind northwind user1
 ``` 
+
+To backup database you may use https://github.com/vladimirbuskin/sql-bak, which does database backup
