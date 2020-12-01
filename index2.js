@@ -3,7 +3,6 @@ const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage')
 const path = require('path');
 const fs = require('fs');
-const path = require('path');
 
 const isLinux = process.platform !== "win32";
 // const isWSL = require('fs').existsSync('/mnt/c');
