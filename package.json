@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/vladimirbuskin/sql-bak-restore#readme",
   "dependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.1",
     "shelljs": "0.5.3",
     "yargs": "3.32.0"
   },
