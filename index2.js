@@ -1,11 +1,12 @@
 require('shelljs/global');
 const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage')
-const { exit } = require('process');
+const path = require('path');
+const fs = require('fs');
 const path = require('path');
 
 const isLinux = process.platform !== "win32";
-const isWSL = require('fs').existsSync('/mnt/c');
+// const isWSL = require('fs').existsSync('/mnt/c');
 
 const options = [
   { name: 'bak', type: String, defaultOption: true },
@@ -28,7 +29,7 @@ const sections = [
     content: `restores SQL-SERVER bak \n
 examples:
 sql-bak-restore -H 192.168.0.109 -U sa -P qwerty --bak "C:/temp/kansas.bak" --to "C:/temp/" --db kansas2 --dbname Wyoming --dblog Wyoming_log --dbuser mstar
-    `
+`
   },
   {
     header: 'Options',
@@ -43,14 +44,8 @@ if (process.argv[0].indexOf('/node')) {
 }
 let isEmptyArgs = process.argv.length == emptyCount;
 
-
 // show help
 const opts = commandLineArgs(options);
-if (isEmptyArgs || opts.help) {
-  const usage = commandLineUsage(sections)
-  console.log(usage);
-  return;
-}
 
 function absPath(p) {
   if (isLinux) {
@@ -75,11 +70,12 @@ function properSlashes(p) {
 
 function restore()
 {
-  var fs = require('fs');
-  var path = require('path');
-
-  // sql-server-restore --bak kansas.bak --to /db/data --db kansas --dblog kansas_log --dbname 
-  // node index -H 192.168.0.109 -U sa -P bender --bak kansas.bak --to /home/vladimir/github/sql-bak-restore --db kansas2 --dbname kansas --dblog kansas_log --dbuser mstar
+  // if no arguments or help, show help, and exit.
+  if (isEmptyArgs || opts.help) {
+    const usage = commandLineUsage(sections)
+    console.log(usage);
+    return;
+  }
 
   var tmpDir = require('os').tmpdir();
   var tmpDirInScript = tmpDir;
