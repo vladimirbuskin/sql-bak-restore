@@ -94,7 +94,11 @@ function restore()
   //   bak = bak.replace(/\\/g, '/');
   // }
 
-  if (!fs.existsSync(absPath(bak)))
+  // do not check file exists, otherwise too hard to configure
+  // with docker file, we should be concerned only that DB
+  // exists from within database ENV. which script below will check
+  // remove this extra check
+  if (false && !fs.existsSync(absPath(bak)))
   {
     console.log("\"" + absPath(bak) + "\" is not found, please specify correct file");
   }
